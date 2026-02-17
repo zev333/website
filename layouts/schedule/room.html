@@ -22,14 +22,10 @@
 <% else %>
   <li><i class="icon-map-marker"></i> <strong>Location</strong>: Online only</li>
 <% end %>
-  <% if ! is_stand(item[:slug]) %>
+  <% if go_live %>
   <li>
     <i class="icon-film"></i> <strong>Video only</strong>:
-    <% if ! go_live %>
-    <span class="muted">We're not quite ready yet</span>
-    <% else %>
     <a href="<%= item[:live_video_link] %>"><%= item[:conference_room] %></a>
-    <% end %>
   </li>
   <% end %>
 </ul>
